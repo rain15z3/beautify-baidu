@@ -9,8 +9,7 @@
 	box-sizing: content-box;
 }
 
-html,
-body {
+html, body {
 	height: 100%;
 }
 
@@ -22,29 +21,10 @@ body {
 @-moz-document url("https://www.baidu.com/") {
 /* 百度首页背景图片 */
 #wrapper {
-	background-image: url("https://files.dbnuo.com/wallpaper/wallhaven-83w372.webp") !important;
+	background-image: url("https://i.loli.net/2020/08/22/H2UzBq6AsMfcKi4.jpg") !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-}
-
-/* 百度热榜 */
-#s-hotsearch-wrapper {
-	box-sizing: border-box;
-	background: rgba(255, 255, 255, 0.5) !important;
-	padding: 24px;
-	border-radius: 12px;
-	width: 720px;
-	backdrop-filter: blur(15px) !important;
-	margin: 0;
-	position: absolute;
-	top: 110%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-#hotsearch-content-wrapper {
-	height: 100px;
 }
 
 /* 头部 */
@@ -55,8 +35,10 @@ body {
 
 #s_top_wrap {
 	height: 30px;
+}
+
+.s-skin-hasbg .s-top-wrap {
 	background: rgba(255, 255, 255, .2);
-	backdrop-filter: blur(15px) !important;
 }
 
 /* 搜索框 */
@@ -72,7 +54,6 @@ body {
 #kw {
 	background: rgba(255, 255, 255, .8) !important;
 	border: 2px solid rgba(255, 255, 255, 0) !important;
-	backdrop-filter: blur(5px) !important;
 }
 
 .soutu-btn,
@@ -85,7 +66,7 @@ body {
 @-moz-document url-prefix("https://www.baidu.com/s?") {
 /* 搜索结果背景图片 */
 #wrapper {
-	background-image: url("https://files.dbnuo.com/wallpaper/wallhaven-83w372.webp") !important;
+	background-image: url("https://i.loli.net/2020/08/22/H2UzBq6AsMfcKi4.jpg") !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -108,10 +89,7 @@ body {
 .c-gap-bottom-small.f13,
 table.result-op,
 .result.c-container,
-.result-op.c-container,
-.Fdujysop_rs,
-.Ybozluop_rs {
-	margin: 3px !important;
+.result-op.c-container {
 	width: 560px;
 	background: rgba(255, 255, 255, .8);
 	padding: 24px;
@@ -120,9 +98,7 @@ table.result-op,
 }
 
 .result.c-container:hover,
-.result-op.c-container:hover,
-.Fdujysop_rs:hover,
-.Ybozluop_rs:hover {
+.result-op.c-container:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, .15);
 }
 
@@ -173,6 +149,18 @@ table.result-op,
 .t a:hover::after {
 	width: 100%;
 }
+
+/* 去除推广 */
+#content_right,
+#rs,
+#foot,
+.sftip_com.sftip_blue,
+.wenda-abstract-showurl-video-new-style,
+.c-img-border.c-img-radius-large,
+.hint_common_restop,
+.c-recommend {
+	display: none;
+}
 }
 
 @-moz-document url-prefix("https://www.baidu.com/s?") {
@@ -200,13 +188,13 @@ table.result-op,
 		display: inline-block;
 		margin: 6px 0 !important;
 	}
+	
+	
 }
 }
 
 @-moz-document url-prefix("https://www.baidu.com/s?") {
-#head,
-#s_tab,
-#page {
+#head, #s_tab, #page {
 	background: rgba(255, 255, 255, .6) !important;
 	backdrop-filter: blur(15px) !important;
 }
@@ -246,58 +234,45 @@ table.result-op,
 .s_down {
 	height: 80px;
 }
+
+#result_logo {
+	display: none;
+}
 }
 
 @-moz-document url-prefix("https://www.baidu.com/s?") {
-/* 去除推广 */
-/*#content_right,
-#rs,
-#foot,
-.head_nums_cont_outer.OP_LOG,
-.wenda-abstract-showurl-video-new-style,
-.hint_common_restop,
-.c-recommend {
-	display: none;
-}*/
-/* 暂时屏蔽 */
-.head_nums_cont_outer {
-	display: none;
-}
-
-/* 搜索工具 */
-.head_nums_cont_outer {
-	background: rgba(255, 255, 255, .6);
-	padding: 24px;
-	width: 560px;
-	height: 10px;
-	border-radius: 3px;
+.head_nums_cont_outer.OP_LOG {
+	width: 1300px;
 	margin: 0 auto;
 }
 
 .head_nums_cont_inner {
-	position: static;
+	top: 0 !important;
+}
+
+.nums,
+.search_tool_conter {
+	width: 560px;
+	background: rgba(255, 255, 255, .8);
+	border-radius: 3px;
+	transition: all .15s;
+	padding: 0 24px;
+}
+
+.nums {
+	margin-left: 0 !important;
 }
 
 .search_tool_conter {
-	height: 10px;
-	line-height: 10px;
+	float: right;
 }
 
-.search_tool_close,
-.head_nums_cont_inner > .nums {
-	display: none;
+.c-tip-timerfilter-si > ul {
+	width: 208px !important;
 }
 
-.head_nums_cont_inner > .search_tool_conter {
-	margin: 0 !important;
-}
-
-.hint_common_restop/* 仅供参考 */
-,
-#rs,
-/* 搜索推荐 */
-#foot/* 页脚 */
-{
+.search_tool,
+.search_tool_close {
 	display: none;
 }
 }
